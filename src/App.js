@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Plus, Bell, MessageCircle, ChevronDown } from "react-feather";
 
-function App() {
+import { Navbar } from "./components/Navbar";
+import { NavItem } from "./components/NavItem";
+import { DropdownMenu } from "./components/Dropdown";
+
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Navbar>
+      <NavItem icon={<Plus />} />
+      <NavItem icon={<Bell />} />
+      <NavItem icon={<MessageCircle />} />
+
+      <NavItem icon={<ChevronDown />}>
+        <DropdownMenu />
+      </NavItem>
+    </Navbar>
   );
 }
-
-export default App;
